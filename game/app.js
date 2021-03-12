@@ -29,7 +29,7 @@ const getRandomWord = async () => {
 const resetGame = ({ word, definition }) => {
           console.log(word.toLowerCase())
           currentWord = word.toLowerCase();
-          currentDefinition = definition;
+          currentDefinition = `Definition: ${definition}`;
           currentWinner = '';
           randomWordElement.textContent = scrambleWord(word);
           definitionElement.textContent = currentDefinition;
@@ -38,7 +38,7 @@ const resetGame = ({ word, definition }) => {
 const client = new tmi.Client({
           identity: {
                     username: 'ChatBot',
-                    password: ''
+                    password: 'wxdl8v8owkp9y8rsoeo6aij2xrgps5'
           },
           connection: { reconnect: true, },
           channels: ['test_account_bot123']
