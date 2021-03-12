@@ -29,7 +29,7 @@ const getRandomWord = async () => {
 const resetGame = ({ word, definition }) => {
           console.log(word.toLowerCase())
           currentWord = word.toLowerCase();
-          currentDefinition = `Definition: ${definition}`;
+          currentDefinition = definition;
           currentWinner = '';
           randomWordElement.textContent = scrambleWord(word);
           definitionElement.textContent = currentDefinition;
@@ -59,7 +59,7 @@ client.on('message', (channel, tags, message, self) => {
                               client.say(channel, `Winner, @${tags['display-name']}, that is Correct!`)
                               guesserElement.textContent = `${tags['display-name']} has guessed the correct word!`
                     } else {
-                              client.say(channel, `Sorry, @${tags['display-name']}, that is wrong!`)
+                              client.say(channel, `Sorry, @${tags['display-name']}. Try again!`)
                     }
           }
 
