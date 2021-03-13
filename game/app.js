@@ -49,6 +49,11 @@ client.connect();
 client.on('message', (channel, tags, message, self) => {
           if (!currentWord) return;
           const [command, ...args] = message.split(' '); // command = !guess // ...args = anything else
+          if (command === '!scramble') {
+                    client.say(channel, `Re-scrambling word!`)
+                    getRandomWord()
+                              .then(resetGame)
+          }
           if (command === '!guess') {
                     if (currentWinner) return;
                     const guess = args.join(' ');
