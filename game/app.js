@@ -6,6 +6,7 @@ const guesserElement = document.querySelector('#guesser');
 let currentWord = '';
 let currentDefinition = '';
 let currentWinner = '';
+let voteCount = 1;
 
 const scrambleWord = (word) => {
           const inputWord = [...word];
@@ -41,20 +42,28 @@ const client = new tmi.Client({
                     password: 'wxdl8v8owkp9y8rsoeo6aij2xrgps5'
           },
           connection: { reconnect: true, },
-          channels: ['test_account_bot123']
+          channels: ['test_account_bot123', 'double0dad', 'fun_bot_123']
 });
 
 client.connect();
 
 client.on('message', (channel, tags, message, self) => {
+          //if it isnt the current word do nothing
           if (!currentWord) return;
           const [command, ...args] = message.split(' '); // command = !guess // ...args = anything else
-          if (command === '!scramble') {
-                    client.say(channel, `Re-scrambling word!`)
-                    client.say(channel, `@${tags['display-name']} has re-scrambled a new word!`)
-                    getRandomWord()
-                              .then(resetGame)
+          //!vote skip to vote to re-scramble/skip the current word 
+          if (command === '!skip') {
+                    if (voteCount != 3) {
+                              client.say(channel, `Vote (${voteCount}/3). ${3 - voteCount} left to skip!`)
+                              voteCount += 1;
+                    } else {
+                              client.say(channel, `Vote (${voteCount}/3). Re-scrambling!`)
+                              getRandomWord()
+                                        .then(resetGame)
+                                        .then(voteCount = 1)
+                    }
           }
+          //!guess <word> to solve
           if (command === '!guess') {
                     if (currentWinner) return;
                     const guess = args.join(' ');
