@@ -25,3 +25,5 @@
 > - [ ] Use ```!guess <word>``` to submit a guess to solve the scrambled word
 >   - If the user is correct it will auto update the winner, reset the scrambled word to another word, and confirm the winner in chat automatically
 >   - If the user is not correct, the bot will respond in chat that the guess is not correct
+> - [ ] Use ```!scramble``` to rescramble a new word
+>   - If the user types this command, the bot will re-scramble a fresh word to guess

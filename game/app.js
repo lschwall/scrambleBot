@@ -50,7 +50,7 @@ client.on('message', (channel, tags, message, self) => {
           if (!currentWord) return;
           const [command, ...args] = message.split(' '); // command = !guess // ...args = anything else
           if (command === '!scramble') {
-                    client.say(channel, `Re-scrambling word!`)
+                    client.say(channel, `@${tags['display-name']} has re-scrambled a new word!`)
                     getRandomWord()
                               .then(resetGame)
           }
