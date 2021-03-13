@@ -50,6 +50,7 @@ client.on('message', (channel, tags, message, self) => {
           if (!currentWord) return;
           const [command, ...args] = message.split(' '); // command = !guess // ...args = anything else
           if (command === '!scramble') {
+                    client.say(channel, `Re-scrambling word!`)
                     client.say(channel, `@${tags['display-name']} has re-scrambled a new word!`)
                     getRandomWord()
                               .then(resetGame)
@@ -64,7 +65,7 @@ client.on('message', (channel, tags, message, self) => {
                               client.say(channel, `Winner, @${tags['display-name']}, that is Correct!`)
                               guesserElement.textContent = `${tags['display-name']} has guessed the correct word!`
                     } else {
-                              client.say(channel, `Sorry, @${tags['display-name']}. Try again!`)
+                              client.say(channel, `Sorry, @${tags['display-name']}, that is wrong!`)
                     }
           }
 
