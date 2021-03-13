@@ -1,12 +1,16 @@
+const { channelList } = require('./channelList')
 // query selectors
 const randomWordElement = document.querySelector('#word');
 const definitionElement = document.querySelector('#definition');
 const guesserElement = document.querySelector('#guesser');
 
+
 let currentWord = '';
 let currentDefinition = '';
 let currentWinner = '';
 let voteCount = 1;
+
+
 
 const scrambleWord = (word) => {
           const inputWord = [...word];
@@ -42,7 +46,7 @@ const client = new tmi.Client({
                     password: 'wxdl8v8owkp9y8rsoeo6aij2xrgps5'
           },
           connection: { reconnect: true, },
-          channels: ['test_account_bot123', 'double0dad', 'fun_bot_123']
+          channels: channelList
 });
 
 client.connect();
