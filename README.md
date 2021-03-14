@@ -30,5 +30,5 @@
 >   - When the voteCount reaches 3, the word will be re-scrambled!
 
 > #### Preview
-> ![Preview](https://vimeo.com/523302093)
+> ![Preview](https://youtu.be/kFssKXDt_so)
 
