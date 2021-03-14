@@ -1,6 +1,12 @@
 # scrambleBot
 ---
 
+## Updates
+
+> ### Most Recent
+> - [ ] Added Github hook for discord server
+
+---
 ## Description
 > A simple unscramble game to challenge your twitch chat and keep them interacting while you stream!
 > This bot was created with respect to @[CodingGarden](https://github.com/CodingGarden/coding-improv/tree/master/episode_005)'s original twitch game. 
