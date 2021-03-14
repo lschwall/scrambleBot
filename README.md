@@ -28,6 +28,9 @@
 > - [ ] Use ```!skip``` to vote to skip current word
 >   - if  the user types this command, the vote will go up by 1. 
 >   - When the voteCount reaches 3, the word will be re-scrambled!
+> - [ ] Use ```!color <color> <rgb(#,#,#)> <hexcode>``` to change the color of the game!
+>   - When the user types the command followed by a color, hexcode, or rgb(#,#,#), it will change the color of the game!
+>   - If the user wants to reset the color of the game back to the original, type ```!color reset```
 
 > #### Preview
 > [![Watch the Video](https://i.imgur.com/EZAd3yl.png)](https://www.youtube.com/watch?v=kFssKXDt_so)
