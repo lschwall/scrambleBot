@@ -1,15 +1,22 @@
-const { channelList } = require('./channelList')
 // query selectors
 const randomWordElement = document.querySelector('#word');
 const definitionElement = document.querySelector('#definition');
 const guesserElement = document.querySelector('#guesser');
-
 
 let currentWord = '';
 let currentDefinition = '';
 let currentWinner = '';
 let voteCount = 1;
 
+let channelList = [
+          'double0dad',
+          'jenocide28',
+          'Shievo',
+          'saxxthehost',
+          'Sarah_Nicolez',
+          'Scoopie5',
+          'test_account_bot1234'
+]
 
 
 const scrambleWord = (word) => {

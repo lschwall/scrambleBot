@@ -5,6 +5,7 @@ let channelList = [
           'saxxthehost',
           'Sarah_Nicolez',
           'Scoopie5',
+          'test_account_bot1234'
 ]
 
 module.exports = {
