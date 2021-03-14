@@ -15,7 +15,7 @@ let channelList = [
           'saxxthehost',
           'Sarah_Nicolez',
           'Scoopie5',
-          'test_account_bot1234'
+          'test_account_bot123'
 ]
 
 
@@ -74,6 +74,23 @@ client.on('message', (channel, tags, message, self) => {
                                         .then(voteCount = 1)
                     }
           }
+          //!color <#hexcode> <colorChoice> to change color of shadow
+          if (command === '!color') {
+                    const colorChoice = args.join(' '); // gets <#hexcode> or <colorChoice>
+                    if (colorChoice === 'reset') {
+                              $('#word').css('text-shadow', `0px 0px 10px #C09AFF`);
+                              $('#definition').css('color', `#5353f1`);
+                              $('#definition').css('text-shadow', `0px 0px 1px #C09AFF`);
+                              $('#guesser').css('color', `#5353f1`);
+                              $('#guesser').css('text-shadow', `0px 0px 1px #C09AFF}`);
+                    } else {
+                              $('#word').css('text-shadow', `0px 0px 10px ${colorChoice}`);
+                              $('#definition').css('color', `white`);
+                              $('#definition').css('text-shadow', `0px 0px 1px ${colorChoice}`);
+                              $('#guesser').css('color', `white`);
+                              $('#guesser').css('text-shadow', `0px 0px 1px ${colorChoice}`);
+                    }
+          }
           //!guess <word> to solve
           if (command === '!guess') {
                     if (currentWinner) return;
@@ -94,8 +111,6 @@ client.on('message', (channel, tags, message, self) => {
                               .then(resetGame)
           }
 });
-
-
 
 getRandomWord()
           .then(resetGame);
