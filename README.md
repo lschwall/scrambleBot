@@ -28,3 +28,7 @@
 > - [ ] Use ```!skip``` to vote to skip current word
 >   - if  the user types this command, the vote will go up by 1. 
 >   - When the voteCount reaches 3, the word will be re-scrambled!
+
+> #### Preview
+> https://user-images.githubusercontent.com/19677630/111053403-11ace080-8429-11eb-8f52-5fa7e4d3db2e.mp4
+
